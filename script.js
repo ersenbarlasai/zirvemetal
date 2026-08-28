@@ -1,109 +1,90 @@
 (function () {
   "use strict";
 
-  // ---- Mobile menu ----
+  var root = document.documentElement;
+  var header = document.getElementById("navbar");
   var menuToggle = document.getElementById("menu-toggle");
   var mobileMenu = document.getElementById("mobile-menu");
+  var cncAct = document.getElementById("cnc");
+  var routeTicking = false;
 
-  function closeMenu() {
+  function closeMenu(restoreFocus) {
+    if (!menuToggle || !mobileMenu) return;
     mobileMenu.classList.remove("is-open");
     menuToggle.setAttribute("aria-expanded", "false");
-  }
-
-  function openMenu() {
-    mobileMenu.classList.add("is-open");
-    menuToggle.setAttribute("aria-expanded", "true");
+    menuToggle.setAttribute("aria-label", "Menüyü aç");
+    if (restoreFocus) menuToggle.focus();
   }
 
   if (menuToggle && mobileMenu) {
     menuToggle.addEventListener("click", function () {
-      var isOpen = menuToggle.getAttribute("aria-expanded") === "true";
-      isOpen ? closeMenu() : openMenu();
+      var open = menuToggle.getAttribute("aria-expanded") === "true";
+      if (open) {
+        closeMenu(false);
+      } else {
+        mobileMenu.classList.add("is-open");
+        menuToggle.setAttribute("aria-expanded", "true");
+        menuToggle.setAttribute("aria-label", "Menüyü kapat");
+      }
     });
 
     mobileMenu.querySelectorAll("a").forEach(function (link) {
-      link.addEventListener("click", closeMenu);
+      link.addEventListener("click", function () { closeMenu(false); });
     });
 
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape" && menuToggle.getAttribute("aria-expanded") === "true") {
-        closeMenu();
-        menuToggle.focus();
-      }
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && menuToggle.getAttribute("aria-expanded") === "true") closeMenu(true);
     });
   }
 
-  // ---- Header scroll shadow ----
-  var header = document.getElementById("navbar");
-  function onScrollHeader() {
-    if (window.scrollY > 8) {
-      header.style.boxShadow = "0 8px 24px rgba(0,0,0,0.35)";
-    } else {
-      header.style.boxShadow = "none";
-    }
-  }
-  window.addEventListener("scroll", onScrollHeader, { passive: true });
-  onScrollHeader();
-
-  // ---- Active nav link on scroll ----
-  var sections = Array.prototype.slice.call(document.querySelectorAll("main section[id]"));
   var navLinks = Array.prototype.slice.call(document.querySelectorAll(".nav-link"));
+  var navSections = navLinks.map(function (link) {
+    return document.querySelector(link.getAttribute("href"));
+  }).filter(Boolean);
 
-  function setActiveLink() {
-    var scrollPos = window.scrollY + 140;
-    var current = sections[0];
-    sections.forEach(function (sec) {
-      if (sec.offsetTop <= scrollPos) current = sec;
+  function updatePageState() {
+    routeTicking = false;
+    var maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    var pageProgress = Math.min(1, Math.max(0, window.scrollY / maxScroll));
+    root.style.setProperty("--route-progress", pageProgress.toFixed(4));
+    if (header) header.classList.toggle("is-scrolled", window.scrollY > 12);
+
+    var current = navSections[0];
+    navSections.forEach(function (section) {
+      if (section.getBoundingClientRect().top <= window.innerHeight * 0.34) current = section;
     });
     navLinks.forEach(function (link) {
-      var isActive = link.getAttribute("href") === "#" + current.id;
-      link.classList.toggle("is-active", isActive);
+      var active = current && link.getAttribute("href") === "#" + current.id;
+      link.classList.toggle("is-active", active);
+      if (active) link.setAttribute("aria-current", "page");
+      else link.removeAttribute("aria-current");
     });
-  }
-  window.addEventListener("scroll", setActiveLink, { passive: true });
-  setActiveLink();
 
-  // ---- Back to top ----
-  var toTop = document.getElementById("to-top");
-  function onScrollToTop() {
-    toTop.classList.toggle("is-visible", window.scrollY > 600);
-  }
-  window.addEventListener("scroll", onScrollToTop, { passive: true });
-  toTop.addEventListener("click", function () {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-
-  // ---- Scroll reveal ----
-  var revealTargets = document.querySelectorAll(
-    ".capacity-card, .service-card, .timeline-step, .about-copy, .about-media, .section-head, .production-video-copy, .instagram-video-shell"
-  );
-  revealTargets.forEach(function (el) { el.classList.add("reveal"); });
-
-  if ("IntersectionObserver" in window) {
-    var observer = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
-    revealTargets.forEach(function (el) { observer.observe(el); });
-  } else {
-    revealTargets.forEach(function (el) { el.classList.add("is-visible"); });
+    if (cncAct) {
+      var value = parseFloat(getComputedStyle(cncAct).getPropertyValue("--sc-p")) || 0;
+      var cutProgress = Math.min(1, Math.max(0, (value - 0.08) / 0.78));
+      root.style.setProperty("--cut-progress", cutProgress.toFixed(4));
+      var stage = cncAct.querySelector("[data-sc-verify-state]");
+      if (stage) stage.setAttribute("data-sc-verify-state", "cut-" + Math.round(cutProgress * 20));
+    }
   }
 
-  // ---- Instagram embed click-to-load ----
+  function requestPageUpdate() {
+    if (routeTicking) return;
+    routeTicking = true;
+    requestAnimationFrame(updatePageState);
+  }
+
+  window.addEventListener("scroll", requestPageUpdate, { passive: true });
+  window.addEventListener("resize", requestPageUpdate, { passive: true });
+
   var igShell = document.getElementById("instagram-video-shell");
-  var igPlayBtn = document.getElementById("instagram-play-btn");
+  var igPlay = document.getElementById("instagram-play-btn");
   var igStatus = document.getElementById("instagram-status");
-  if (igShell && igPlayBtn) {
-    igPlayBtn.addEventListener("click", function () {
+
+  if (igShell && igPlay) {
+    igPlay.addEventListener("click", function () {
       if (igShell.classList.contains("is-playing")) return;
-      igShell.classList.add("is-playing");
       if (igStatus) igStatus.textContent = "Instagram videosu yükleniyor.";
 
       var iframe = document.createElement("iframe");
@@ -113,26 +94,33 @@
       iframe.setAttribute("allow", "encrypted-media; picture-in-picture; fullscreen");
       iframe.allowFullscreen = true;
       iframe.referrerPolicy = "strict-origin-when-cross-origin";
-      iframe.tabIndex = -1;
       iframe.addEventListener("load", function () {
         if (igStatus) igStatus.textContent = "Instagram videosu yüklendi.";
         iframe.focus();
       });
       igShell.appendChild(iframe);
+      igShell.classList.add("is-playing");
     });
   }
 
-  // ---- Quote form ----
-  var form = document.getElementById("quote-form");
-  var status = document.getElementById("form-status");
-  if (form) {
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
-      status.textContent = "Teklif formu çok yakında aktif olacaktır. Bu süre içinde Instagram üzerinden bizimle iletişime geçebilirsiniz.";
-    });
+  document.addEventListener("focusin", function (event) {
+    var target = event.target;
+    if (!target.matches("a,button")) return;
+    if (!target.matches(":focus-visible")) return;
+    var act = target.closest(".sc-act--pinned");
+    if (!act) return;
+    var travel = Math.max(0, act.offsetHeight - window.innerHeight);
+    if (!travel) return;
+    var progress = act.id === "contact" ? 0.18 : 0.5;
+    window.scrollTo({ top: act.offsetTop + travel * progress, behavior: "instant" });
+  });
+
+  if (window.ScrollCraft && typeof window.ScrollCraft.mount === "function") {
+    window.ScrollCraft.mount(document.body);
   }
+
+  requestAnimationFrame(function () {
+    updatePageState();
+    setTimeout(updatePageState, 120);
+  });
 })();

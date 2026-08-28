@@ -1,412 +1,173 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <script>document.documentElement.classList.add("js");</script>
-<noscript><style>.menu-toggle,#instagram-play-btn,#instagram-play-desc{display:none !important;}</style></noscript>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zirve Metal | CNC Fiber Lazer Kesim</title>
-<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
-<meta name="description" content="Zirve Metal, 12 kW CNC fiber lazer teknolojisiyle 2000 × 6000 mm çalışma alanında yüksek hassasiyetli sac kesim çözümleri sunar.">
+<noscript><style>.menu-toggle,.instagram-play-btn{display:none!important}</style></noscript>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Zirve Metal | Çelik Servis Merkezi ve CNC Lazer Kesim</title>
+<meta name="description" content="Zirve Metal, İskenderun'da stoktan toptan metal ve yapı malzemeleri, CNC fiber lazer kesim, nakliye ve sahaya teslim çözümleri sunar.">
 <link rel="canonical" href="https://zirvemetal.com.tr/">
-
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://zirvemetal.com.tr/">
-<meta property="og:title" content="Zirve Metal | CNC Fiber Lazer Kesim">
-<meta property="og:description" content="Zirve Metal, 12 kW CNC fiber lazer teknolojisiyle 2000 × 6000 mm çalışma alanında yüksek hassasiyetli sac kesim çözümleri sunar.">
+<meta property="og:title" content="Zirve Metal | Çelik Servis Merkezi ve CNC Lazer Kesim">
+<meta property="og:description" content="Stoktan toptan tedarik, CNC fiber lazer kesim ve sahaya teslim. Metal ve yapı malzemelerinde tek iş akışı.">
 <meta property="og:image" content="https://zirvemetal.com.tr/images/og-image.jpg">
 <meta property="og:locale" content="tr_TR">
-
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Zirve Metal | CNC Fiber Lazer Kesim">
-<meta name="twitter:description" content="Zirve Metal, 12 kW CNC fiber lazer teknolojisiyle 2000 × 6000 mm çalışma alanında yüksek hassasiyetli sac kesim çözümleri sunar.">
-<meta name="twitter:image" content="https://zirvemetal.com.tr/images/og-image.jpg">
-
-<link rel="preload" as="image" href="images/hero-1600.webp" imagesrcset="images/hero-640.webp 640w, images/hero-960.webp 960w, images/hero-1600.webp 1600w" fetchpriority="high">
+<link rel="preload" as="image" href="images/site/facility-hero.webp" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="scrollcraft.css">
 <link rel="stylesheet" href="style.css">
-
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Zirve Metal",
   "url": "https://zirvemetal.com.tr/",
-  "email": "info@zirvemetal.net",
+  "logo": "https://zirvemetal.com.tr/images/logo.png",
+  "description": "Stoktan toptan metal ve yapı malzemeleri, CNC fiber lazer kesim, nakliye ve sahaya teslim çözümleri.",
+  "email": "info@zirvemetal.com.tr",
   "telephone": ["+90 507 181 25 60", "+90 532 641 12 00"],
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Dumlupınar Mahallesi Tayfur Sökmen Bulvarı No:36",
-    "addressLocality": "İskenderun",
-    "addressRegion": "Hatay",
-    "addressCountry": "TR"
-  },
-  "sameAs": ["https://www.instagram.com/reels/DbH8BKgMuvc/"]
+  "address": {"@type":"PostalAddress","streetAddress":"Dumlupınar Mahallesi Tayfur Sökmen Bulvarı No:36","addressLocality":"İskenderun","addressRegion":"Hatay","addressCountry":"TR"},
+  "sameAs": ["https://www.instagram.com/reels/DbH8BKgMuvc/"],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Metal, yapı malzemeleri ve işleme hizmetleri",
+    "itemListElement": [
+      {"@type":"OfferCatalog","name":"Boru, profil, NPI, NPU ve köşebent"},
+      {"@type":"OfferCatalog","name":"Sac ve levha sac"},
+      {"@type":"OfferCatalog","name":"Sandviç panel, panel taşıyıcı konstrüksiyon ve yalıtım malzemeleri"},
+      {"@type":"OfferCatalog","name":"Tel örgü, tel çit ve kontraplak"},
+      {"@type":"OfferCatalog","name":"CNC fiber lazer kesim"}
+    ]
+  }
 }
 </script>
 </head>
 <body>
 <a class="skip-link" href="#main">İçeriğe geç</a>
+<div class="laser-route" aria-hidden="true"><span class="laser-route-track"></span><span class="laser-route-progress"></span><span class="laser-route-head"></span></div>
+<div class="sc-grain" aria-hidden="true"></div>
 
 <header class="site-header" id="navbar">
   <div class="header-inner">
-    <a class="logo" href="#home" aria-label="Zirve Metal anasayfa">
-      <img class="site-logo" src="images/logo.png" width="1600" height="876" alt="">
-    </a>
-
+    <a class="logo" href="#home" aria-label="Zirve Metal ana sayfa"><img src="images/logo.png" width="1600" height="876" alt="Zirve Metal" class="site-logo"></a>
     <nav class="main-nav" aria-label="Ana navigasyon">
-      <ul>
-        <li><a href="#home" class="nav-link is-active">Ana Sayfa</a></li>
-        <li><a href="#about" class="nav-link">Hakkımızda</a></li>
-        <li><a href="#production" class="nav-link">Üretim Gücü</a></li>
-        <li><a href="#services" class="nav-link">Hizmetler</a></li>
-        <li><a href="#process" class="nav-link">Süreç</a></li>
-        <li><a href="#contact" class="nav-link">İletişim</a></li>
-      </ul>
+      <a href="#about" class="nav-link">Kurumsal</a><a href="#products" class="nav-link">Ürünler</a><a href="#logistics" class="nav-link">Tedarik</a><a href="#cnc" class="nav-link">CNC Lazer</a><a href="#sectors" class="nav-link">Sektörler</a><a href="#contact" class="nav-link">İletişim</a>
     </nav>
-
     <div class="header-actions">
-      <a href="#contact" class="btn btn-primary btn-sm header-cta">Teklif Al</a>
-      <button type="button" class="menu-toggle" id="menu-toggle" aria-controls="mobile-menu" aria-expanded="false" aria-label="Menüyü aç">
-        <svg viewBox="0 0 24 24" class="icon-menu" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-        <svg viewBox="0 0 24 24" class="icon-close" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-      </button>
+      <a class="btn btn-primary header-cta" href="https://wa.me/905071812560?text=Merhaba%20Zirve%20Metal%2C%20%C3%BCr%C3%BCn%20ve%20hizmetleriniz%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer">WhatsApp'tan Ulaş</a>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false" aria-label="Menüyü aç"><svg class="menu-open-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2"/></svg><svg class="menu-close-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
     </div>
   </div>
-
-  <div class="mobile-menu" id="mobile-menu">
-    <a href="#home" class="mobile-nav-link">Ana Sayfa</a>
-    <a href="#about" class="mobile-nav-link">Hakkımızda</a>
-    <a href="#production" class="mobile-nav-link">Üretim Gücü</a>
-    <a href="#services" class="mobile-nav-link">Hizmetler</a>
-    <a href="#process" class="mobile-nav-link">Süreç</a>
-    <a href="#contact" class="mobile-nav-link">İletişim</a>
-  </div>
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Mobil navigasyon">
+    <a href="#about">Kurumsal</a><a href="#products">Ürünler</a><a href="#logistics">Tedarik</a><a href="#cnc">CNC Lazer</a><a href="#sectors">Sektörler</a><a href="#contact">İletişim</a><a href="https://wa.me/905071812560?text=Merhaba%20Zirve%20Metal%2C%20%C3%BCr%C3%BCn%20ve%20hizmetleriniz%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer">WhatsApp'tan Ulaş</a>
+  </nav>
 </header>
 
 <main id="main">
+  <section class="hero" id="home" data-sc-act="scrub" data-sc-span="1.7" data-sc-dwell="0.12" data-sc-drift="#081017">
+    <div class="sc-stage hero-stage" data-sc-stage>
+      <img class="sc-stage__poster hero-image" src="images/site/facility-hero.webp" width="1920" height="1080" alt="Zirve Metal tesisinin havadan görünümü">
+      <video data-sc-scrub data-sc-lerp="0.1" data-sc-src="images/site/hero-scrub.mp4" data-sc-src-mobile="images/site/hero-scrub-mobile.mp4" muted playsinline preload="none" aria-hidden="true"></video>
+      <div class="sc-scrim sc-scrim--lead hero-scrim" aria-hidden="true"></div><div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-copy" data-sc-cue="0 0.78 0">
+        <p class="overline">Çelik servis merkezi yaklaşımı</p>
+        <h1 class="sc-display hero-title" data-sc-kinetic="lines">Stoktan çelik.<br><span>Kesim. Teslim.</span></h1>
+        <p class="hero-lede">Toptan metal ve yapı malzemelerini stoktan tedarik ediyor, CNC fiber lazerle işliyor, sahaya ulaştırıyoruz.</p>
+        <a class="btn btn-primary" href="https://wa.me/905071812560?text=Merhaba%20Zirve%20Metal%2C%20teklif%20almak%20istiyorum." target="_blank" rel="noopener noreferrer">WhatsApp'tan Ulaş</a>
+      </div>
+      <div class="hero-proof" aria-label="Temel hizmetler"><span>Stoklu tedarik</span><span>Toptan satış</span><span>CNC fiber lazer</span><span>Sahaya teslim</span></div>
+    </div>
+  </section>
 
-  <!-- Hero -->
-  <section class="hero" id="home">
-    <picture class="hero-media">
-      <source type="image/webp" srcset="images/hero-640.webp 640w, images/hero-960.webp 960w, images/hero-1600.webp 1600w" sizes="100vw">
-      <img
-        src="images/hero-960.jpg"
-        srcset="images/hero-640.jpg 640w, images/hero-960.jpg 960w, images/hero-1600.jpg 1600w"
-        sizes="100vw"
-        width="1600" height="900"
-        alt="Zirve Metal üretim tesisi dış cephesi ve tabelası"
-        class="hero-img"
-        fetchpriority="high"
-      >
-    </picture>
-    <div class="hero-overlay" aria-hidden="true"></div>
-    <div class="hero-grid-texture" aria-hidden="true"></div>
+  <section class="service-center sc-section" id="about" data-sc-act="flow" data-sc-drift="#0D171F">
+    <div class="sc-wrap service-center-grid">
+      <div class="service-center-copy" data-sc-in data-sc-stagger="55">
+        <p class="overline">Tek merkez, bütün iş akışı</p>
+        <h2 class="sc-display section-title">Malzemeyi yalnızca satmıyoruz. İşinize hazır hale getiriyoruz.</h2>
+        <p class="section-lede">Zirve Metal, İskenderun'daki stok ve operasyon sahasında metal ürünleri ile yapı malzemelerini toptan tedarik eder. Talebe göre CNC fiber lazer kesim yapar, nakliye ve sahaya teslim sürecini aynı merkezden yönetir.</p>
+        <p>Güçlü altyapı, yüksek kaliteli ürün ve hizmet anlayışı, geniş ürün grubu ve ölçüye göre işleme kabiliyetiyle inşaattan makine sanayisine uzanan projelere güvenilir çözüm ortağı olur.</p>
+      </div>
+      <figure class="service-center-media" data-sc-reveal="left" data-sc-reveal-at="0.08 0.62">
+        <img src="images/site/facility-front.webp" width="1600" height="1000" loading="lazy" alt="Zirve Metal mağazası, stok rafları ve yükleme sahası">
+        <figcaption>Sac, boru, profil, NPI, NPU, köşebent ve yapı malzemeleri aynı tedarik noktasında.</figcaption>
+      </figure>
+    </div>
+  </section>
 
-    <div class="hero-content container">
-      <div class="hero-copy">
-        <span class="eyebrow"><span class="eyebrow-bar" aria-hidden="true"></span>Zirve Metal Endüstriyel</span>
-        <h1 class="hero-title">Güçlü Projeler,<br><span class="text-accent">Doğru Kesimle Başlar.</span></h1>
-        <p class="hero-desc">Zirve Metal; modern üretim altyapısı, deneyimli ekibi ve yüksek hassasiyetli CNC teknolojisiyle sanayi, imalat ve proje bazlı ihtiyaçlara profesyonel çözümler sunar.</p>
-        <div class="hero-actions">
-          <a href="#contact" class="btn btn-primary">Teklif Al</a>
-          <a href="#production" class="btn btn-outline">Sanayi Tipi İncele</a>
+  <section class="products" id="products" data-sc-act="pan" data-sc-span="2.7" data-sc-drift="#101B23">
+    <div class="sc-stage products-stage" data-sc-stage>
+      <div class="product-rail" data-sc-pan="0.04">
+        <div class="product-rail-lead"><p class="overline">Stoktan toptan tedarik</p><h2 class="sc-display section-title">Projenin ihtiyacı neyse, sahadaki karşılığı burada.</h2><p>Çelik ürünlerinden yapı kabuğuna, çevre güvenliğinden yalıtıma uzanan ürün grupları.</p></div>
+        <article class="product-item"><figure data-sc-tilt="5"><img src="images/site/pipes-profiles.webp" width="900" height="1125" loading="lazy" alt="Zirve Metal raflarında boru ve kutu profiller"></figure><div class="product-label"><h3>Boru ve Profil</h3><p>Yuvarlak boru, kutu profil ve farklı kesitlerde profil ürünleri.</p></div></article>
+        <article class="product-item"><figure data-sc-tilt="5"><img src="images/site/structural-steel.webp" width="900" height="1125" loading="lazy" alt="Farklı kesitlerde stoklu çelik ürünleri"></figure><div class="product-label"><h3>Yapısal Çelik</h3><p>NPI, NPU, köşebent ve konstrüksiyon ihtiyaçlarına yönelik uzun çelik ürünleri.</p></div></article>
+        <article class="product-item"><figure data-sc-tilt="5"><img src="images/site/sheet-mesh.webp" width="900" height="1125" loading="lazy" alt="Stok alanındaki sac ve metal yüzey ürünleri"></figure><div class="product-label"><h3>Sac Ürünleri</h3><p>Sac, levha sac ve CNC fiber lazer kesime uygun metal levhalar.</p></div></article>
+        <article class="product-item"><figure data-sc-tilt="5"><img src="images/site/sandwich-panel.webp" width="900" height="1125" loading="lazy" alt="Stokta bulunan sandviç panel ürünleri"></figure><div class="product-label"><h3>Panel Sistemleri</h3><p>Sandviç panel, panel taşıyıcı konstrüksiyonlar ve tamamlayıcı yalıtım çözümleri.</p></div></article>
+        <article class="product-item"><figure data-sc-tilt="5"><img src="images/site/plywood.webp" width="900" height="1125" loading="lazy" alt="Paketlenmiş kontraplak levhalar"></figure><div class="product-label"><h3>Saha Malzemeleri</h3><p>Tel örgü, tel çit, kontraplak ve farklı uygulamalar için yalıtım malzemeleri.</p></div></article>
+        <div class="product-rail-close"><p>Aradığınız ölçü ve ürün grubu için stok durumunu doğrudan sorun.</p><a class="text-link" href="https://wa.me/905071812560?text=Merhaba%20Zirve%20Metal%2C%20stok%20durumu%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer">Stok bilgisi alın</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="logistics sc-section" id="logistics" data-sc-act="flow" data-sc-drift="#0B151C">
+    <div class="sc-wrap logistics-grid">
+      <div class="logistics-media" data-sc-reveal="right" data-sc-reveal-at="0.02 0.3"><img src="images/site/panel-logistics.webp" width="1600" height="1000" loading="lazy" alt="Sandviç panellerin kamyondan forkliftle indirilmesi"></div>
+      <div class="logistics-copy" data-sc-in data-sc-stagger="60">
+        <h2 class="sc-display section-title">Stoktan çıkar. Planlı yüklenir. Sahaya ulaşır.</h2>
+        <p>Projenizin ihtiyacı olan ürünler stoktan hazırlanır, toptan sipariş düzenine göre yüklenir ve nakliye organizasyonuyla uygulama sahasına ulaştırılır.</p>
+        <ol class="supply-flow">
+          <li><strong>Talebi paylaşın</strong><span>Ürün grubu, ölçü, miktar ve teslimat noktasını iletin.</span></li>
+          <li><strong>Stok ve işleme planlansın</strong><span>Mevcut ürünler belirlenir, gerekiyorsa CNC kesim süreci hazırlanır.</span></li>
+          <li><strong>Yükleme yapılsın</strong><span>Sipariş, sevkiyat düzenine uygun biçimde sahadan çıkar.</span></li>
+          <li><strong>Sahaya teslim edilsin</strong><span>Malzeme belirlenen teslimat noktasına ulaştırılır.</span></li>
+        </ol>
+      </div>
+    </div>
+    <div class="sc-wrap logistics-strip" data-sc-in data-sc-stagger="45"><img src="images/site/delivery-truck.webp" width="1600" height="1000" loading="lazy" alt="Zirve Metal tesisinde sevkiyata hazırlanan yüklü kamyon" data-sc-parallax="-0.35"><p>Tedarikten teslimata kadar tek muhatap.</p></div>
+  </section>
+
+  <section class="quiet-act" data-sc-act="flow" data-sc-drift="#081017" aria-label="CNC lazer kesim bölümüne geçiş"><img src="images/site/stock-racks.webp" width="1600" height="1000" loading="lazy" alt="Zirve Metal'in düzenli profil stok rafları"><p>Malzeme hazır.<br>Sıra ölçünüzde.</p></section>
+
+  <section class="cnc" id="cnc" data-sc-act="pin" data-sc-span="3.2" data-sc-dwell="0.4" data-sc-drift="#090F14">
+    <div class="sc-stage cnc-stage" data-sc-stage data-sc-verify-state="cnc-start">
+      <div class="cnc-grid-bg" aria-hidden="true"></div>
+      <svg class="cut-path" viewBox="0 0 1600 900" preserveAspectRatio="none" aria-hidden="true"><path class="cut-path-shadow" d="M0 590 H430 L510 510 H1010 L1090 430 H1600"/><path class="cut-path-core" d="M0 590 H430 L510 510 H1010 L1090 430 H1600"/></svg>
+      <div class="cnc-inner">
+        <div class="cnc-copy" data-sc-cue="0 0.86 0">
+          <p class="overline">Hassas işleme</p><h2 class="sc-display section-title" data-sc-kinetic="lines">Güçlü projeler, doğru kesimle başlar.</h2>
+          <p>12 kW CNC fiber lazer teknolojisiyle 1 mm ile 35 mm arasındaki sacları, 2000 × 6000 mm çalışma alanında yüksek hassasiyetle kesiyoruz.</p>
+          <dl class="cnc-specs"><div><dt>12 kW</dt><dd>Fiber lazer gücü</dd></div><div><dt>2000 × 6000 mm</dt><dd>Çalışma alanı</dd></div><div><dt>1-35 mm</dt><dd>Kesim aralığı</dd></div></dl>
+        </div>
+        <div class="instagram-video-shell" id="instagram-video-shell" data-sc-cue="0 0.9 0 0.25">
+          <div class="instagram-poster"><img src="images/site/facility-front.webp" width="1600" height="1000" loading="lazy" alt="Zirve Metal üretim videosu kapak görüntüsü"><span class="instagram-poster-scrim" aria-hidden="true"></span><button class="instagram-play-btn" id="instagram-play-btn" type="button" aria-label="Instagram üretim videosunu oynat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></button><a href="https://www.instagram.com/reels/DbH8BKgMuvc/" target="_blank" rel="noopener noreferrer">Instagram'da izleyin</a></div><p class="visually-hidden" id="instagram-status" role="status" aria-live="polite"></p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Güven / Fayda Şeridi -->
-  <section class="trust-strip">
-    <div class="container trust-grid">
-      <div class="trust-item">
-        <svg class="trust-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4z" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linejoin="round"/></svg>
-        <span>Yüksek Hassasiyet</span>
-      </div>
-      <div class="trust-item">
-        <svg class="trust-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2L4 14h6l-1 8 9-12h-6z" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linejoin="round"/></svg>
-        <span>Hızlı Üretim</span>
-      </div>
-      <div class="trust-item">
-        <svg class="trust-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v4H4zM6 8v12h12V8" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linejoin="round"/></svg>
-        <span>Temiz Kesim</span>
-      </div>
-      <div class="trust-item">
-        <svg class="trust-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8M21 7v6M21 7h-6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span>Maksimum Verimlilik</span>
-      </div>
+  <section class="sectors sc-section" id="sectors" data-sc-act="flow" data-sc-drift="#0D171F">
+    <div class="sc-wrap sectors-grid">
+      <div class="sectors-head" data-sc-in><h2 class="sc-display section-title">Farklı disiplinler. Aynı güçlü tedarik zinciri.</h2><p>Malzeme tedariki, ölçüye göre kesim ve teslimat kabiliyetimizle proje ekiplerinin iş akışına dahil oluyoruz.</p></div>
+      <ul class="sector-list" data-sc-in data-sc-stagger="45"><li><span>İnşaat</span><small>Taşıyıcı ve tamamlayıcı metal ürünleri</small></li><li><span>Konstrüksiyon</span><small>Profil, yapısal çelik ve levha ihtiyaçları</small></li><li><span>Mimarlık</span><small>Projeye göre malzeme ve kesim çözümleri</small></li><li><span>Dekorasyon</span><small>Metal yüzey ve özel kesim uygulamaları</small></li><li><span>Mühendislik</span><small>Teknik ölçülere göre üretim hazırlığı</small></li><li><span>Sanayi Makineleri</span><small>Makine parçası ve gövde üretimine yönelik sac kesim</small></li><li><span>Makine Sanayi</span><small>İmalat süreçlerine uygun metal tedariki</small></li></ul>
     </div>
   </section>
 
-  <!-- Üretim Gücü -->
-  <section class="production" id="production">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow eyebrow-dark"><span class="eyebrow-bar" aria-hidden="true"></span>Üretim Gücü</span>
-        <h2 class="section-title">Teknik Kapasitemiz</h2>
+  <section class="contact" id="contact" data-sc-act="pin" data-sc-span="1.2" data-sc-drift="#081017">
+    <div class="sc-stage contact-stage" data-sc-stage data-sc-spotlight>
+      <div class="contact-inner">
+        <div class="contact-copy" data-sc-cue="0 1 0 0"><p class="overline">Talebinizi doğrudan iletin</p><h2 class="sc-display section-title">Malzeme listenizi gönderin. Birlikte planlayalım.</h2><p>Ürün grubu, ölçü, miktar ve teslimat noktasını WhatsApp üzerinden paylaşın.</p><a class="btn btn-primary contact-cta" href="https://wa.me/905071812560?text=Merhaba%20Zirve%20Metal%2C%20malzeme%20listem%20i%C3%A7in%20teklif%20almak%20istiyorum." target="_blank" rel="noopener noreferrer" data-sc-magnet="0.24">WhatsApp'tan Ulaş</a></div>
+        <address class="contact-details" data-sc-cue="0 1 0 0"><a href="mailto:info@zirvemetal.com.tr">info@zirvemetal.com.tr</a><a href="tel:+905071812560">0507 181 25 60</a><a href="tel:+905326411200">0532 641 12 00</a><span>Dumlupınar Mahallesi<br>Tayfur Sökmen Bulvarı No:36<br>İskenderun, Hatay</span></address>
       </div>
-
-      <div class="capacity-grid">
-        <div class="capacity-card">
-          <span class="capacity-index">01 // KAPASİTE</span>
-          <span class="capacity-value">12 kW</span>
-          <span class="capacity-label">Fiber Lazer Gücü</span>
-        </div>
-        <div class="capacity-card">
-          <span class="capacity-index">02 // BOYUT</span>
-          <span class="capacity-value">2000 × 6000 mm</span>
-          <span class="capacity-label">Çalışma Alanı</span>
-        </div>
-        <div class="capacity-card">
-          <span class="capacity-index">03 // KALINLIK</span>
-          <span class="capacity-value">1–35 mm</span>
-          <span class="capacity-label">Kesim Kapasitesi</span>
-        </div>
-      </div>
+      <footer class="site-footer"><img src="images/logo.png" width="1600" height="876" alt="" class="footer-logo"><p>© 2026 Zirve Metal. Tüm hakları saklıdır.</p><a href="https://www.instagram.com/reels/DbH8BKgMuvc/" target="_blank" rel="noopener noreferrer">Instagram</a></footer>
     </div>
   </section>
-
-  <!-- Üretim Videosu -->
-  <section class="production-video" id="production-video">
-    <div class="container production-video-grid">
-      <div class="production-video-copy">
-        <span class="eyebrow eyebrow-dark"><span class="eyebrow-bar" aria-hidden="true"></span>Üretimden Görüntüler</span>
-        <h2 class="section-title">Teknolojiyi Üretime Dönüştürüyoruz</h2>
-        <p>12 kW CNC fiber lazer teknolojimizle gerçekleştirdiğimiz yüksek hassasiyetli kesim sürecini yakından inceleyin.</p>
-        <a href="https://www.instagram.com/reels/DbH8BKgMuvc/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Instagram'da İzle</a>
-      </div>
-
-      <div class="instagram-video-shell" id="instagram-video-shell">
-        <div class="instagram-poster" id="instagram-poster">
-          <picture>
-            <source type="image/webp" srcset="images/hero-640.webp 640w, images/hero-960.webp 960w" sizes="(min-width: 900px) 420px, 90vw">
-            <img
-              src="images/hero-640.jpg"
-              srcset="images/hero-640.jpg 640w, images/hero-960.jpg 960w"
-              sizes="(min-width: 900px) 420px, 90vw"
-              width="960" height="1200"
-              loading="lazy"
-              alt=""
-              class="instagram-poster-img"
-            >
-          </picture>
-          <div class="instagram-poster-overlay" aria-hidden="true"></div>
-          <button type="button" class="instagram-play-btn" id="instagram-play-btn" aria-describedby="instagram-play-desc">
-            <span class="instagram-play-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
-            </span>
-            <span class="visually-hidden">Instagram videosunu oynat</span>
-          </button>
-          <p id="instagram-play-desc" class="instagram-play-desc">Instagram videosunu oynat</p>
-          <a class="instagram-fallback-link" href="https://www.instagram.com/reels/DbH8BKgMuvc/" target="_blank" rel="noopener noreferrer">Videoyu Instagram'da İzleyin</a>
-        </div>
-        <p class="visually-hidden" id="instagram-status" role="status" aria-live="polite"></p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Hizmetler -->
-  <section class="services" id="services">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow eyebrow-dark"><span class="eyebrow-bar" aria-hidden="true"></span>Hizmetler</span>
-        <h2 class="section-title">Ne Yapıyoruz</h2>
-      </div>
-
-      <div class="service-card">
-        <div class="service-card-head">
-          <span class="service-num" aria-hidden="true">01</span>
-          <svg class="service-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="1.5"/></svg>
-          <h3>CNC Fiber Lazer Kesim</h3>
-        </div>
-        <p>12 kW gücündeki CNC fiber lazer kesim makinemiz ve 2000 × 6000 mm çalışma alanımızla, 1–35 mm kalınlık aralığındaki sacları yüksek hassasiyetle kesiyoruz.</p>
-        <ul class="service-features">
-          <li>Yüksek hassasiyet</li>
-          <li>Hızlı üretim</li>
-          <li>Temiz kesim</li>
-          <li>Maksimum verimlilik</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Üretim Süreci -->
-  <section class="process" id="process">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow eyebrow-dark"><span class="eyebrow-bar" aria-hidden="true"></span>Süreç</span>
-        <h2 class="section-title">Üretim Süreci</h2>
-      </div>
-
-      <ol class="timeline">
-        <li class="timeline-step">
-          <span class="timeline-num">01</span>
-          <div class="timeline-body">
-            <h3>Projelendirme</h3>
-            <p>Teknik çizimlerin üretime hazırlanması ve optimizasyonu.</p>
-          </div>
-        </li>
-        <li class="timeline-step">
-          <span class="timeline-num">02</span>
-          <div class="timeline-body">
-            <h3>Lazer Kesim</h3>
-            <p>Belirlenen toleranslar dahilinde CNC fiber lazer ile hassas kesim.</p>
-          </div>
-        </li>
-        <li class="timeline-step">
-          <span class="timeline-num">03</span>
-          <div class="timeline-body">
-            <h3>Kalite Kontrol</h3>
-            <p>Ölçüm ve yüzey kontrolü ile son onay süreci.</p>
-          </div>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <!-- Hakkımızda -->
-  <section class="about" id="about">
-    <div class="container about-grid">
-      <div class="about-copy">
-        <span class="eyebrow eyebrow-dark"><span class="eyebrow-bar" aria-hidden="true"></span>Hakkımızda</span>
-        <h2 class="section-title">Kaliteyi Teknolojiyle<br>Buluşturuyoruz.</h2>
-        <p>Güçlü altyapısı, modern üretim anlayışı ve kaliteli hizmet anlayışıyla Zirve Metal, metal işleme sektöründe güvenin ve üretimin adresidir.</p>
-        <p>Her proje, deneyimli ekibimizin hazırladığı profesyonel tasarımlarla başlar. İhtiyacınıza özel çözümler geliştiriyor, üretimin her aşamasını titizlikle planlıyoruz.</p>
-        <p>12 kW gücündeki son teknoloji CNC fiber lazer kesim makinemiz ve 2000 × 6000 mm çalışma alanımız sayesinde, 1 mm ile 35 mm arasındaki farklı kalınlıklardaki sacları yüksek hassasiyetle kesiyoruz. Hızlı üretim, temiz kesim ve maksimum verimlilik anlayışıyla; sanayi, imalat ve proje bazlı tüm ihtiyaçlarınıza profesyonel çözümler sunuyoruz. Tasarımdan üretime uzanan yolculukta kaliteyi teknolojiyle buluşturuyoruz. Çünkü güçlü projeler, doğru kesimle başlar.</p>
-
-        <a class="instagram-card" href="https://www.instagram.com/reels/DbH8BKgMuvc/" target="_blank" rel="noopener noreferrer">
-          <span class="instagram-play" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
-          </span>
-          <span class="instagram-text">
-            <strong>Üretim Videolarımızı İzleyin</strong>
-            <span>Instagram'da @zirvemetal</span>
-          </span>
-        </a>
-      </div>
-
-      <div class="about-media">
-        <picture>
-          <source type="image/webp" srcset="images/hero-640.webp 640w, images/hero-960.webp 960w" sizes="(min-width: 900px) 40vw, 90vw">
-          <img
-            src="images/hero-960.jpg"
-            srcset="images/hero-640.jpg 640w, images/hero-960.jpg 960w"
-            sizes="(min-width: 900px) 40vw, 90vw"
-            width="1600" height="900"
-            loading="lazy"
-            alt="Zirve Metal tesisi ve üretim sahası"
-          >
-        </picture>
-      </div>
-    </div>
-  </section>
-
-  <!-- İletişim -->
-  <section class="contact" id="contact">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow eyebrow-dark"><span class="eyebrow-bar" aria-hidden="true"></span>İletişim</span>
-        <h2 class="section-title">Projenizi Konuşalım</h2>
-        <p class="section-lead">Sorularınız ve proje talepleriniz için bize aşağıdaki kanallardan ulaşabilir veya formu doldurabilirsiniz.</p>
-      </div>
-
-      <div class="contact-grid">
-        <div class="contact-info-col">
-          <ul class="contact-info-list">
-            <li class="contact-info-item">
-              <svg class="contact-info-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linejoin="round"/><path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <div class="contact-info-body">
-                <span class="contact-info-label">E-posta</span>
-                <a class="contact-info-value" href="mailto:info@zirvemetal.net">info@zirvemetal.net</a>
-              </div>
-            </li>
-            <li class="contact-info-item">
-              <svg class="contact-info-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.6 21 3 12.4 3 2.7c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1z" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linejoin="round"/></svg>
-              <div class="contact-info-body">
-                <span class="contact-info-label">GSM</span>
-                <a class="contact-info-value" href="tel:+905071812560" aria-label="Telefonla ara: 0507 181 25 60">0507 181 25 60</a>
-              </div>
-            </li>
-            <li class="contact-info-item">
-              <svg class="contact-info-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.6 21 3 12.4 3 2.7c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1z" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linejoin="round"/></svg>
-              <div class="contact-info-body">
-                <span class="contact-info-label">GSM</span>
-                <a class="contact-info-value" href="tel:+905326411200" aria-label="Telefonla ara: 0532 641 12 00">0532 641 12 00</a>
-              </div>
-            </li>
-            <li class="contact-info-item">
-              <svg class="contact-info-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.6 7-11.5A7 7 0 0 0 5 9.5C5 14.4 12 21 12 21z" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.3" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
-              <div class="contact-info-body">
-                <span class="contact-info-label">Adres</span>
-                <span class="contact-info-value contact-info-address">Dumlupınar Mahallesi<br>Tayfur Sökmen Bulvarı No:36<br>İskenderun, Hatay</span>
-              </div>
-            </li>
-          </ul>
-
-          <a class="instagram-card instagram-card-lg" href="https://www.instagram.com/reels/DbH8BKgMuvc/" target="_blank" rel="noopener noreferrer">
-            <span class="instagram-play" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
-            </span>
-            <span class="instagram-text">
-              <strong>Üretim Videolarımızı İzleyin</strong>
-              <span>Instagram'da @zirvemetal</span>
-            </span>
-          </a>
-        </div>
-
-        <form class="quote-form" id="quote-form" novalidate>
-          <div class="form-row">
-            <label for="q-name">Ad Soyad</label>
-            <input type="text" id="q-name" name="name" required autocomplete="name">
-          </div>
-          <div class="form-row">
-            <label for="q-phone">Telefon</label>
-            <input type="tel" id="q-phone" name="phone" required autocomplete="tel">
-          </div>
-          <div class="form-row">
-            <label for="q-message">Proje Detayı</label>
-            <textarea id="q-message" name="message" rows="4" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary btn-block">Teklif Al</button>
-          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
-        </form>
-      </div>
-    </div>
-  </section>
-
 </main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <div class="footer-top">
-      <a class="footer-logo" href="#home" aria-label="Zirve Metal anasayfa">
-        <img class="site-logo site-logo-footer" src="images/logo.png" width="1600" height="876" alt="">
-      </a>
-      <nav class="footer-nav" aria-label="Yasal bağlantılar">
-        <a href="#">Gizlilik Politikası</a>
-        <a href="#">KVKK</a>
-        <a href="#">Kullanım Koşulları</a>
-      </nav>
-    </div>
-    <div class="footer-bottom">
-      <ul class="footer-contact">
-        <li><a href="mailto:info@zirvemetal.net">info@zirvemetal.net</a></li>
-        <li><a href="tel:+905071812560" aria-label="Telefonla ara: 0507 181 25 60">0507 181 25 60</a></li>
-        <li><a href="tel:+905326411200" aria-label="Telefonla ara: 0532 641 12 00">0532 641 12 00</a></li>
-        <li>Dumlupınar Mah. Tayfur Sökmen Blv. No:36, İskenderun/Hatay</li>
-      </ul>
-      <p class="footer-copy">© 2026 Zirve Metal. Tüm Hakları Saklıdır.</p>
-    </div>
-  </div>
-</footer>
-
-<button type="button" class="to-top" id="to-top" aria-label="Sayfa başına dön">
-  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-</button>
-
+<script src="scrollcraft.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,245 @@
+{
+  "meta": {
+    "name": "Zirve Metal Industrial Service DNA",
+    "description": "Premium, sade ve gerçek tesis fotoğraflarına dayalı çelik servis merkezi deneyimi.",
+    "source_references": [
+      "images/logo.png",
+      "images/ZİRVEMETALCOMTR/DJI_20260822140326_0204_D.JPG",
+      "images/ZİRVEMETALCOMTR/DJI_20260813172711_0008_D.JPG",
+      "images/ZİRVEMETALCOMTR/DSC04103.JPG",
+      "scrollcraft/builds/zirvemetal/BRIEF.md"
+    ],
+    "created_at": "2026-08-28"
+  },
+  "design_system": {
+    "color": {
+      "palette_type": "split-complementary",
+      "primary": { "hex": "#3749A0", "role": "logo, brand identity and selected technical emphasis" },
+      "secondary": { "hex": "#151D24", "role": "steel-dark structural surface" },
+      "accent": { "hex": "#F15A24", "role": "laser trace and primary action only" },
+      "neutral": {
+        "scale": ["#081017", "#0D171F", "#151D24", "#26323B", "#67737C", "#AEB7BD", "#E8ECEF", "#F7F8F8"],
+        "usage": "Dark architectural grounds, cool steel dividers and high-contrast light ink."
+      },
+      "semantic": {
+        "success": "#42A878",
+        "warning": "#D99B32",
+        "error": "#D65B5B",
+        "info": "#5E79D8"
+      },
+      "surface": {
+        "background": "#081017",
+        "card": "#101B23",
+        "elevated": "#182630"
+      },
+      "contrast_strategy": "High-contrast light text on dark steel grounds; localized corner or column scrims over photography.",
+      "measurement": {
+        "method": "deterministic_stratified",
+        "max_pixels": 160000,
+        "k": 8
+      },
+      "measured_palette": [
+        { "hex": "#3749A0", "coverage": 0.1396, "role": "logo accent" },
+        { "hex": "#252931", "coverage": 0.1438, "role": "facility dark" },
+        { "hex": "#12141A", "coverage": 0.1115, "role": "facility deep neutral" },
+        { "hex": "#919293", "coverage": 0.1651, "role": "steel neutral" },
+        { "hex": "#CFE1EE", "coverage": 0.1751, "role": "daylight background" },
+        { "hex": "#4B1F18", "coverage": 0.2689, "role": "oxide stock tone" },
+        { "hex": "#9C5249", "coverage": 0.1453, "role": "oxide secondary" },
+        { "hex": "#F4F6F5", "coverage": 0.0357, "role": "light ink reference" }
+      ]
+    },
+    "typography": {
+      "type_scale": {
+        "display": { "size": "clamp(3.4rem, 7.2vw, 7.5rem)", "weight": 700, "line_height": 0.9, "tracking": "-0.035em" },
+        "heading_1": { "size": "clamp(3rem, 6vw, 6.5rem)", "weight": 700, "line_height": 0.92, "tracking": "-0.03em" },
+        "heading_2": { "size": "clamp(2.4rem, 4.8vw, 5rem)", "weight": 700, "line_height": 0.96, "tracking": "-0.025em" },
+        "heading_3": { "size": "clamp(1.5rem, 2.2vw, 2.25rem)", "weight": 600, "line_height": 1.05, "tracking": "-0.015em" },
+        "body": { "size": "clamp(1rem, 0.96rem + 0.18vw, 1.125rem)", "weight": 500, "line_height": 1.65, "tracking": "0.005em" },
+        "body_small": { "size": "0.9375rem", "weight": 500, "line_height": 1.55, "tracking": "0.01em" },
+        "caption": { "size": "0.8125rem", "weight": 600, "line_height": 1.35, "tracking": "0.04em" },
+        "overline": { "size": "0.75rem", "weight": 700, "line_height": 1.2, "tracking": "0.16em" }
+      },
+      "font_families": {
+        "heading": "Barlow Condensed, Arial Narrow, sans-serif",
+        "body": "Manrope, Arial, sans-serif",
+        "mono": "IBM Plex Mono, Consolas, monospace"
+      },
+      "font_style_notes": "Condensed industrial display face with a clear humanist body face; headlines carry strength without faux-tech decoration."
+    },
+    "spacing": {
+      "base_unit": "4px",
+      "scale": ["4px", "8px", "12px", "16px", "24px", "32px", "48px", "64px", "96px", "128px", "192px"],
+      "content_density": "comfortable",
+      "section_rhythm": "Alternates compact factual bands with full-viewport photographic acts; mobile spacing compresses fluidly."
+    },
+    "layout": {
+      "grid_system": "12-column fluid grid with asymmetric editorial spans",
+      "max_content_width": "1320px",
+      "columns": 12,
+      "gutter": "clamp(20px, 4vw, 72px)",
+      "breakpoints": ["480px", "760px", "1024px", "1280px"],
+      "alignment_tendency": "asymmetric"
+    },
+    "shape": {
+      "border_radius": { "small": "0px", "medium": "0px", "large": "0px", "pill": "999px" },
+      "border_usage": "Subtle 1px steel hairlines and orange laser rules; pill reserved for circular controls only.",
+      "divider_style": "Technical hairline with occasional cut marks."
+    },
+    "elevation": {
+      "shadow_style": "layered and cool-tinted",
+      "levels": {
+        "low": "0 2px 8px rgba(0, 8, 14, 0.22)",
+        "medium": "0 12px 32px rgba(0, 8, 14, 0.3)",
+        "high": "0 32px 80px rgba(0, 8, 14, 0.42)"
+      },
+      "depth_cues": "Overlapping photo planes, edge light, controlled parallax and localized scrims."
+    },
+    "iconography": {
+      "style": "technical outline",
+      "stroke_weight": "1.5px",
+      "size_scale": ["18px", "24px", "32px"],
+      "preferred_set": "Custom inline SVG using square geometry"
+    },
+    "motion": {
+      "easing": "cubic-bezier(0.23, 1, 0.32, 1)",
+      "duration_scale": { "micro": "140ms", "normal": "240ms", "macro": "420ms" },
+      "entrance_pattern": "Short line or clip reveals driven by scroll progress",
+      "exit_pattern": "Crossfade or cut after a readable plateau",
+      "philosophy": "Cinematic but controlled; scroll supplies the energy and UI remains fast."
+    },
+    "components": {
+      "button_style": "Square, compact, direct labels, orange primary and transparent outline secondary",
+      "input_style": "Dark open fields with bottom or 1px steel border and visible focus",
+      "card_style": "Asymmetric photo plates and factual museum-style labels; no repeated icon-card grid",
+      "navigation_pattern": "Fixed low-profile dark rail with wordmark, section links and one WhatsApp action",
+      "modal_style": "Not used",
+      "list_style": "Hairline-separated inventory and sector lists",
+      "component_notes": "One CTA label everywhere; corners remain sharp across surfaces."
+    }
+  },
+  "design_style": {
+    "aesthetic": {
+      "mood": ["güçlü", "endüstriyel", "güvenilir", "premium", "kontrollü"],
+      "visual_metaphor": "A laser line travelling through a working steel service centre",
+      "era_influence": "Contemporary industrial editorial",
+      "genre": "premium industrial B2B",
+      "personality_traits": ["confident", "precise", "prepared", "direct"],
+      "adjectives": ["architectural", "photographic", "steel-dark", "high-contrast"]
+    },
+    "visual_language": {
+      "complexity": "moderate",
+      "ornamentation": "subtle technical accents",
+      "whitespace_usage": "Generous around claims, compressed around inventory facts",
+      "visual_weight_distribution": "Large photographic fields balanced by condensed type blocks",
+      "focal_strategy": "Progressive reveal culminating in CNC laser precision",
+      "contrast_level": "high",
+      "texture_usage": "Real steel surfaces, subtle grain and dot-grid only"
+    },
+    "composition": {
+      "hierarchy_method": "Scale contrast and spatial isolation",
+      "balance_type": "asymmetric",
+      "flow_direction": "Vertical journey with one lateral inventory movement",
+      "grouping_strategy": "Proximity, hairlines and shared image labels",
+      "negative_space_role": "Creates calm before the laser-cut peak"
+    },
+    "imagery": {
+      "photo_treatment": "Real architectural and documentary photographs, cool-neutral grade, preserved oxide and daylight tones",
+      "illustration_style": "No decorative illustration; technical SVG line only",
+      "graphic_elements": "Laser trace, cut marks, dimension ticks and restrained grid",
+      "pattern_usage": "Low-opacity dot grid on selected dark grounds",
+      "image_shape": "Full bleed, wide cinematic crop and sharp rectangular product plates"
+    },
+    "interaction_feel": {
+      "feedback_style": "Immediate and mechanical",
+      "hover_behavior": "Small translation, edge highlight and image scale below 1.03",
+      "transition_personality": "smooth glide",
+      "loading_style": "Real poster remains until Instagram content is explicitly requested",
+      "microinteraction_density": "low"
+    },
+    "brand_voice_in_ui": {
+      "tone": "Direct, assured and technically grounded",
+      "formality": "Professional",
+      "cta_style": "Direct imperative",
+      "empty_state_approach": "Plain explanation with a direct external option",
+      "error_tone": "Clear, calm and solution-oriented"
+    }
+  },
+  "visual_effects": {
+    "overview": {
+      "effect_intensity": "moderate",
+      "performance_tier": "medium",
+      "fallback_strategy": "Static photographs, completed laser trace and native horizontal scrolling under reduced motion or without JavaScript",
+      "primary_technology": "Vanilla JavaScript, CSS and SVG"
+    },
+    "background_effects": {
+      "type": "noise-field",
+      "description": "Subtle film grain and technical dot grid on dark steel surfaces",
+      "technology": "CSS",
+      "params": { "color_palette": ["#081017", "#151D24"], "speed": "static", "density": "low", "opacity": 0.045, "blend_mode": "soft-light" }
+    },
+    "particle_systems": {
+      "enabled": false,
+      "type": "none",
+      "description": "No particles",
+      "technology": "none",
+      "params": { "count": 0, "shape": "none", "size_range": "none", "movement_pattern": "none", "color_behavior": "none", "interaction": "none", "spawn_area": "none" }
+    },
+    "3d_elements": {
+      "enabled": false,
+      "type": "none",
+      "description": "Real photography replaces synthetic 3D",
+      "technology": "none",
+      "params": { "renderer": "none", "lighting": "none", "camera": "none", "materials": [], "geometry": [], "post_processing": [], "interaction_model": "none" }
+    },
+    "shader_effects": {
+      "enabled": false,
+      "type": "none",
+      "description": "No shaders",
+      "technology": "none",
+      "params": { "uniforms": {}, "vertex_manipulation": "none", "fragment_output": "none", "noise_type": "none", "distortion": "none" }
+    },
+    "scroll_effects": {
+      "parallax": { "enabled": true, "layers": 2, "depth_range": "20px to 120px", "speed_curve": "smooth linear from scroll progress" },
+      "scroll_triggered_animations": { "enabled": true, "trigger_points": "Per act and intersection entry", "animation_type": "photo scrub, line reveal, pan, clip reveal and count", "scrub_behavior": "lerped to scroll progress" },
+      "scroll_morphing": { "enabled": true, "description": "The persistent laser trace changes from vertical route to horizontal cutting path at the CNC peak." }
+    },
+    "text_effects": {
+      "type": "split-line-animate",
+      "description": "Selected hero and peak headlines assemble by line",
+      "technology": "Scrollcraft DOM splitting",
+      "params": { "split_strategy": "by-line", "animation_per_unit": "translateY and opacity", "stagger": "short", "effect_style": "mechanical reveal" }
+    },
+    "cursor_effects": {
+      "enabled": true,
+      "type": "magnetic primary action",
+      "description": "Only the closing WhatsApp action responds subtly to a precise pointer",
+      "params": { "shape": "native", "size": "native", "blend_mode": "normal", "trail": false, "interaction_zone": "closing CTA only" }
+    },
+    "image_effects": {
+      "type": "reveal-clip and restrained parallax",
+      "description": "Real facility and product photography enters through structural wipes",
+      "technology": "CSS clip-path and transforms",
+      "params": { "filter_pipeline": "none beyond optimized source grade", "hover_transform": "scale up to 1.025", "reveal_animation": "directional clip", "distortion_type": "none" }
+    },
+    "glassmorphism_neumorphism": {
+      "enabled": false,
+      "style": "none",
+      "params": { "blur_radius": "0", "transparency": 0, "border_treatment": "none", "shadow_type": "none", "light_source_angle": "none" }
+    },
+    "canvas_drawings": {
+      "enabled": false,
+      "type": "none",
+      "description": "No generative canvas drawing",
+      "technology": "none",
+      "params": { "draw_method": "none", "animation_loop": "none", "color_scheme": [], "responsiveness": "none", "interaction": "none" }
+    },
+    "svg_animations": {
+      "enabled": true,
+      "type": "path-draw",
+      "description": "A laser trace records the journey and becomes the CNC cutting path",
+      "params": { "animation_method": "stroke-dashoffset from scroll progress", "path_morphing": false, "stroke_animation": true, "filter_effects": "localized warm core only at the CNC peak" }
+    },
+    "composite_notes": "The laser trace is the only conspicuous effect. Real imagery remains dominant, and every motion layer resolves to static content for reduced-motion users."
+  }
+}
