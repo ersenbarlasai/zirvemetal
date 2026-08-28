@@ -4,10 +4,10 @@
 
 - Masaüstü: 1440 × 900, 13,3 viewport yüksekliği.
 - Mobil: 390 × 844, 14 viewport yüksekliği.
-- Azaltılmış hareket: 1440 × 900, video indirilmeden poster kullanıldı.
-- Act dizisi: `scrub > flow > pan > flow > flow > pin > flow > pin`.
+- Azaltılmış hareket: 1440 × 900, statik hero görseli kullanıldı.
+- Act dizisi: `pin > flow > pan > flow > flow > pin > flow > pin`.
 - Ölü kaydırma bulunmadı.
-- Hero scrub klibi görünür olduğu her örnekte ilerledi.
+- Hero statik görseli bütün scroll örneklerinde kararlı kaldı.
 - Medya üzerindeki bütün ölçülen metinler en kötü karede 4,5:1 kontrastı geçti.
 - Ürün rayı masaüstünde 2020 px gerçek taşma alanına sahipti.
 - Instagram iframe'i sayfa açılışında yoktu, oynat düğmesine basıldığında bir kez oluşturuldu.
@@ -36,9 +36,10 @@ Ardışık iki hero karesi deterministik olarak ölçüldü. Ortalama renk fark�
 
 Gerçek iPhone video kod çözücüsü, Düşük Güç Modu ve fiziksel dokunmatik kaydırma davranışı bu bilgisayardaki başsız Chrome ile doğrulanamaz. Mobil yerleşim ve azaltılmış hareket davranışı Chrome emülasyonunda doğrulandı.
 
-## Hero Geçiş Yumuşatma Kontrolü
+## Hero Görseli ve Scroll Kararlılığı
 
-- Hero klibinin playhead takip oranı `0.18` varsayılanından hero'ya özel `0.10` değerine indirildi.
-- Orta noktadaki hız farkını belirginleştiren dwell değeri `0.30` değerinden `0.12` değerine indirildi.
+- Hero görseli `DJI_20260822141027_0217_D.JPG` kaynağından 1920 × 1080 WebP olarak optimize edildi.
+- Scroll sırasında video karelerine seek yapan scrub katmanı kaldırıldı; hero sabit pinned fotoğraf olarak çalışıyor.
+- Decoder, kare arama ve poster-video geçişi ortadan kalktığı için hero kaynaklı titreşim oluşmuyor.
 - Sayfa uzunluğu değiştirilmedi: masaüstü 13,3 ve mobil 14 viewport yüksekliğinde kaldı.
-- 1440 x 900 ve 390 x 844 taramalarında ölü kaydırma oluşmadı, hero klibi görünür olduğu bütün örneklerde ilerledi ve metin kontrastı 4,5:1 sınırını geçti.
+- 1440 x 900 ve 390 x 844 taramalarında ölü kaydırma oluşmadı ve metin kontrastı 4,5:1 sınırını geçti.

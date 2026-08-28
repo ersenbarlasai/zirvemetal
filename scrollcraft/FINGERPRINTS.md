@@ -28,7 +28,7 @@ changes only grammar and world will fail it.
 
 | Build | Grammar | Nav treatment | Hero device | Act-sequence shape | Close pattern | Signature move | World | Port |
 |---|---|---|---|---|---|---|---|---|
-| Zirve Metal | Filmic one-shot | Fixed dark industrial rail with one WhatsApp action | Real facility photo scrub with line kinetic | 8 acts, scrub > flow > pan > flow > flow > pin > flow > pin, 13.3vh desktop | Held dark contact stage with address and WhatsApp | Laser trace records the page and becomes the CNC cut path | Real architectural and industrial documentary | 4500 |
+| Zirve Metal | Filmic one-shot | Fixed dark industrial rail with one WhatsApp action | Stable pinned drone photograph with line kinetic | 8 acts, pin > flow > pan > flow > flow > pin > flow > pin, 13.3vh desktop | Held dark contact stage with address and WhatsApp | Laser trace records the page and becomes the CNC cut path | Real architectural and industrial documentary | 4500 |
 
 *(empty: your first build has nothing to clear, so build whatever the interview
 points at. From the second onwards, this table is the constraint.)*

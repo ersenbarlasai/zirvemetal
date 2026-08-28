@@ -73,7 +73,7 @@ p { text-wrap: pretty; }
 
 /* Hero */
 .hero-stage { background: #081017; }
-.hero-image, .hero-stage video { object-position: center 45%; }
+.hero-image { object-position: center 45%; }
 .hero-scrim { background: linear-gradient(90deg,rgba(8,16,23,.99) 0%,rgba(8,16,23,.97) 42%,rgba(8,16,23,.9) 54%,rgba(8,16,23,.36) 68%,transparent 80%); }
 .hero-grid, .cnc-grid-bg { position: absolute; inset: 0; pointer-events: none; background-image: radial-gradient(circle,rgba(255,255,255,.12) 1px,transparent 1px); background-size: 28px 28px; opacity: .21; mask-image: linear-gradient(to bottom,transparent 2%,#000 28%,#000 82%,transparent); }
 .hero-copy { position: absolute; z-index: 5; left: max(var(--sc-gutter),calc((100vw - var(--sc-maxw))/2 + var(--sc-gutter))); bottom: clamp(7.6rem,11vh,9rem); width: min(44rem,calc(100vw - 2 * var(--sc-gutter))); }
@@ -216,7 +216,7 @@ html:not(.js) .laser-route { display: none; }
   .logo, .site-logo { width: 92px; }
   .header-cta { display: none; }
   .laser-route { display: none; }
-  .hero-stage video, .hero-image { object-position: 50% 48%; }
+  .hero-image { object-position: 50% 48%; }
   .hero-scrim { background: linear-gradient(to top,rgba(8,16,23,.97) 0%,rgba(8,16,23,.78) 48%,rgba(8,16,23,.08) 82%); }
   .hero-copy { left: 1.25rem; right: 1.25rem; bottom: 7.4rem; width: auto; }
   .hero-title { margin-block: .7rem 1rem; font-size: clamp(3.45rem,15vw,5rem); line-height: .84; }

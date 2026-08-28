@@ -26,7 +26,7 @@ Kayıt defteri boş. Bu ilk build olduğu için bütün boyutlarda otomatik olar
 
 | Beat | His | Cihaz | Neden |
 |---|---|---|---|
-| Ölçek | Güven | `scrub` türetilmiş gerçek fotoğraf + satır kinetiği | Tesis ziyaretçinin eliyle sakin biçimde yaklaşır |
+| Ölçek | Güven | `pin` gerçek drone fotoğrafı + satır kinetiği | Tesis görüntüsü sabit ve güçlü bir açılış oluşturur; decoder kaynaklı titreşim üretmez |
 | Ürün yelpazesi | Rahatlık | `pan` ürün rayı | Yatay hareket seçenek genişliği olarak okunur |
 | Lojistik | Kontrol | `flow` + `reveal` + hafif `parallax` | Gerçek yükleme görüntüsü iddiayı kanıta çevirir |
 | Sessizlik | Beklenti | kısa `flow` fotoğraf alanı | Zirve öncesindeki görsel gürültüyü azaltır |
